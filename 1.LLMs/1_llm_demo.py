@@ -1,11 +1,11 @@
 from dotenv import load_dotenv
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_google_genai import GoogleGenerativeAI
 
 # Load variables from .env
 load_dotenv()
 
-# LangChain automatically picks GOOGLE_API_KEY from environment
-llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash")
+# Plain LLM (not chat) - like OpenAI's "instruct" models
+llm = GoogleGenerativeAI(model="gemini-1.5-flash")
 
-response = llm.invoke("What is the capital of India?")
-print(response.content)
+result = llm.invoke("What is the capital of India?")
+print(result)
