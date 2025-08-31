@@ -19,4 +19,6 @@ query = "tell me about Virat Kohli"
 documents_embedding = embedding.embed_documents(documents)
 query_embedding = embedding.embed_query(query)
 
-print(cosine_similarity([query_embedding] , documents_embedding))
+scores = (cosine_similarity([query_embedding] , documents_embedding)[0])
+
+print(scores)
